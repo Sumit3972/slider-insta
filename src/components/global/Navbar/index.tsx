@@ -11,6 +11,9 @@ import { HelpDuoToneWhite } from "@/icons";
 import { SubscriptionPlan } from "../Subscription-Plan";
 import UpgradeCard from "../slidebar/upgrade";
 import { Menu } from "lucide-react";
+import CreateAutomation from "../create-automation";
+import Search from "./search";
+import Notification from "./notification";
 
 
 
@@ -59,6 +62,11 @@ const Navbar = ({ slug }: Props) => {
               </div>
             </Sheet>
           </span>
+              <Search/>
+          <CreateAutomation/>
+          <Notification/>
+
+          
         
         </div>
        
