@@ -1,11 +1,13 @@
 "use client"
 import { usePath } from '@/hooks/use-nav'
 import { LogoSmall } from '@/svg/logo-svg'
-import React from 'react'
+import React, { Children } from 'react'
 import Items from './items' // ✅ Correct import (default export)
 import { Separator } from '@/components/ui/separator'
 import ClerkAuthState from '../clerk-auth-state'
 import { HelpDuoToneWhite } from '@/icons'
+import { SubscriptionPlan } from '../Subscription-Plan'
+import UpgradeCard from './upgrade'
 
 type Props = {
     slugs: string
@@ -44,9 +46,15 @@ const Slidebar = ({ slugs }: Props) => {
                      </div>
                      <div className='flex gap-x-3'>
                       <HelpDuoToneWhite/>
-                      <p className='text-[#9B9CA0]'></p>
+                      <p className='text-[#9B9CA0]'>Help</p>
                      </div>
                 </div>
+
+                <SubscriptionPlan>
+                    <div className='flex-1 flex flex-col justify-end'>
+                       <UpgradeCard/>
+                    </div>
+                </SubscriptionPlan>
                 
             </div>
         </div>

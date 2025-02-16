@@ -1,3 +1,4 @@
+import Navbar from '@/components/global/Navbar'
 import Slidebar from '@/components/global/slidebar'
 import React from 'react'
 
@@ -10,6 +11,9 @@ const Layout = ({children,params}: Props) => {
   return (
     <div className='p-3'>
         <Slidebar slugs={params.slug}/>
+        <div className='lg:ml-[250px] lg:pl-10 lg:py-5 flex flex-col overflow-auto'>
+           <Navbar slug={params.slug}/>
+        </div>
     </div>
   )
 }
