@@ -14,6 +14,7 @@ import { Menu } from "lucide-react";
 import CreateAutomation from "../create-automation";
 import Search from "./search";
 import Notification from "./notification";
+import MainBreadCrum from "../main-crum";
 
 
 
@@ -69,6 +70,9 @@ const Navbar = ({ slug }: Props) => {
           
         
         </div>
+        <MainBreadCrum page={page=== slug ? 'Home' : page}
+          slug={slug}
+        />
        
       </div>
     )

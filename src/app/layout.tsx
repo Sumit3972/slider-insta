@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from "@/Providers/Theme-Provider";
 import { Toaster } from "sonner";
 
-
-const inter = Inter({ subsets: ["latin"] });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,30 +14,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-
     <ClerkProvider>
       <html lang="en">
-
-        <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-
+        <body className={`${jakarta.className} dark`}> {/* Force dark mode */}
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
             {children}
-             <Toaster/>
+            <Toaster />
           </ThemeProvider>
-
         </body>
-
       </html>
     </ClerkProvider>
-
   );
 }

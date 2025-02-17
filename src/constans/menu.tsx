@@ -28,7 +28,7 @@ export const SIDEBAR_MENU: SideBarProps[] = [
   },
   {
     id: uuid(),
-    label: 'setting',
+    label: 'settings',
     icon: <SettingsDuoToneWhite />
   },
 ]
