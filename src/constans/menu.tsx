@@ -18,12 +18,12 @@ export const SIDEBAR_MENU: SideBarProps[] = [
   },
   {
     id: uuid(),
-    label: 'automation',
+    label: 'automations',
     icon: <AutomationDuoToneWhite />
   },
   {
     id: uuid(),
-    label: 'integration',
+    label: 'integrations',
     icon: <RocketDuoToneWhite />
   },
   {
