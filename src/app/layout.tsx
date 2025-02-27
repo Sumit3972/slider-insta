@@ -4,6 +4,8 @@ import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from "@/Providers/Theme-Provider";
 import { Toaster } from "sonner";
+import ReactQueryProvider from "@/Providers/react-query-provider";
+
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -20,7 +22,9 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${jakarta.className} dark`}> {/* Force dark mode */}
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+            <ReactQueryProvider >
             {children}
+            </ReactQueryProvider>
             <Toaster />
           </ThemeProvider>
         </body>
