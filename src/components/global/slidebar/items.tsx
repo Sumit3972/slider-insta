@@ -14,7 +14,7 @@ const Items = ({ page, slug }: Props) => {
       {SIDEBAR_MENU.map((item) => (
         <Link 
           key={item.id}
-          href={`/dasboard/${slug}${item.label === 'home' ? '' : `/${item.label}`}`}
+          href={`/dashboard/${slug}${item.label === 'home' ? '' : `/${item.label}`}`}
           className={cn(
             'capitalize flex gap-x-2 rounded-full p-3',
             page === item.label && 'bg-[#0f0f0f]',

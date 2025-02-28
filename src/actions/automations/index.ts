@@ -1,10 +1,11 @@
 'use server'
 
+
 import { onCurrentUser } from "../user"
-import { CreateAutomation } from "./queries";
+import { CreateAutomation, getAutomation } from "./queries";
 
  
-export const getallAutomation = async ()=>{
+export const createAutomation = async ()=>{
     const user = await onCurrentUser();
     try {
         const create = await CreateAutomation(user.id)
@@ -14,4 +15,15 @@ export const getallAutomation = async ()=>{
     } catch (error) {
          return {status:500 , data:'internal server error'}
     }
+}
+
+export const getallAutomation = async()=>{
+     const user = await onCurrentUser();
+     try {
+        const automation = await getAutomation(user.id);
+        if(automation) return {status:200,data:automation.automations}
+        return {status:400,data:[]}
+     } catch (error) {
+        return{status:500,data:[]}
+     }
 }

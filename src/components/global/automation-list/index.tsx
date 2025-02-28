@@ -6,11 +6,23 @@ import Link from 'next/link'
 import React from 'react'
 import GradientButton from '../gradient-button'
 import { Button } from '@/components/ui/button'
+import { useQueryAutomation } from '@/hooks/Query-automation'
+import CreateAutomation from '../create-automation'
 
 type Props = {}
 
 const AutomationList = (props: Props) => {
+  const {data} = useQueryAutomation();
   const {pathname} = usePath();
+
+  if(data?.status !== 200 || data?.data.length  <=0){
+    return(
+      <div className='h-[70vh] flex justify-center items-center flex-col gap-y-3'>
+        <h3 className='text-lg text-gray-400'>No AutoMation is Created </h3>
+        <CreateAutomation/>
+      </div>
+    )
+  }
   return (
     <div className='flex flex-col gap-y-3'>
        <Link

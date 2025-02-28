@@ -38,7 +38,7 @@ const ClerkAuthState = (props: Props) => {
         <UserButton>
           <UserButton.UserProfileLink
             label="Dashboard"
-            url={`/dasboard`}
+            url={`/dashboard`}
             labelIcon={<User size={16} />}
           />
         </UserButton>

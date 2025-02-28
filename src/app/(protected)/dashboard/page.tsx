@@ -9,7 +9,7 @@ const Page =  async (props: Props) => {
     // server action to on board a users
     const user = await onBoardUser();
        if(user?.status == 200 || user?.status == 201 ){
-        return redirect(`dashboard ${user.data?.firstname} ${user.data?.lastname}`)
+        return redirect(`dashboard/ ${user.data?.firstname} ${user.data?.lastname}`)
        }
       return redirect('/sign-in')
 }
